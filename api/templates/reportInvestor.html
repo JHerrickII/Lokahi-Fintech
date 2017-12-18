@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{%  load static %}
+<link rel="stylesheet" href="{%  static  'assets/css/main.css' %}" />
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'assets/js/skel.min.js' %}"></script>
+<script src="{% static 'assets/js/util.js' %}"></script>
+{% load static %}
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+            <title>{{report_name}}</title>
+    </head>
+    
+    <body>
+        <p> Selected Report </p>
+        <ul>
+            {#    {% for file in report_files %}#}
+            {#    #}
+            {#    <!-- <li><a href="/api/{{ Report.report_file_name }}/"></a></li>-->#}
+            {#    <!--I replaced the above li^ with the one below, but ima keep it here as a comment just in case-->#}
+            {#    <!-- need to check if report is private, and if it is check if the user logged in is site manager-->#}
+            {#    <li><a href="{{report_file_name}}.doc" download> {{ file }} </a></li>#}
+            {#    {% endfor %}#}
+            
+        </ul>
+        
+        {% if selected_report %}
+        <p> Company Name: {{selected_report.company_name}} </p>
+        <p> Company Phone: {{selected_report.company_phone}}</p>
+        <p> Company Location: {{selected_report.company_location}} </p>
+        <p> Company Country: {{selected_report.company_country}} </p>
+        <p> Business Type: {{selected_report.business_type}}</p>
+        <p> Current Projects: {{selected_report.current_projects|linebreaks}}</p>
+        <p> Privacy: {{selected_report.private}} </p>
+        <p> Encrypted: {{selected_report.encrypted}}</p>
+        <p> Files: <br>
+        
+        {% for attachment in selected_report.files.all %}
+        {% if "enc" not in attachment.filename %}
+      <a href={{ attachment.file.url }} download> {{ attachment.filename }} </a>
+
+    <br>
+{% endif %}
+        {% if "enc" in attachment.filename %}
+            <hidden a href={{ attachment.file.url }} download> <p hidden>{{ attachment.filename }}</p></a></hidden>
+            <br>
+        {% endif %}
+    {% endfor %}
+</p>
+        <br>
+        
+        <button><a href="/editReportI/{{ selected_report.pk }}/">Edit Report</a></button>
+        
+        {% endif %}
+        
+        
+        <button><a href="/welcome">Back to Home Screen</a></button>
+    </body>
+</html>

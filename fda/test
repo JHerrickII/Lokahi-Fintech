@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Reports</title>
+</head>
+<body>
+<h2>View Reports</h2> 
+
+    <ul>
+    <h3>Public Reports</h3>
+    
+        
+            <a href="/singleReport/1">Test report</a>
+            <br>
+        
+    
+
+    <h3>Private Reports</h3>
+    
+        
+    
+    </ul>
+
+	
+<button><a href="/welcome">Back to Profile</a></button>
+</body>
+</html>

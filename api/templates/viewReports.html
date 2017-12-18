@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{%  load static %}
+<link rel="stylesheet" href="{%  static  'assets/css/main.css' %}" />
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'assets/js/skel.min.js' %}"></script>
+<script src="{% static 'assets/js/util.js' %}"></script>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Reports</title>
+</head>
+<body>
+<h2>View Reports</h2> 
+{% if report_list %}
+    <ul>
+    <h3>Public Reports</h3>
+    {% for Report in report_list %}
+        {% if not Report.private %}
+            <a href="/singleReport/{{ Report.pk }}">{{ Report.report_name }}</a>
+            <br>
+        {% endif %}
+    {% endfor %}
+
+    <h3>Private Reports</h3>
+    {% for Report in report_list %}
+        {% if Report.private %}
+            <a href="/singleReport/{{ Report.pk }}">{{ Report.report_name }}</a>
+            <br>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No reports are available.</p>
+{% endif %}
+	
+<button><a href="/welcome">Back to Home Screen</a></button>
+</body>
+</html>

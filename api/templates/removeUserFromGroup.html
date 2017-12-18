@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remove Users From Group</title>
+
+
+</head>
+<body>
+{%  load static %}
+<link rel="stylesheet" href="{%  static  'assets/css/main.css' %}" />
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'assets/js/skel.min.js' %}"></script>
+<script src="{% static 'assets/js/util.js' %}"></script>
+    <h1>Select Users</h1>
+    <p>Hello, {{ user.username }}  <a href="{% url 'logout' %}">[Logout]</a></p>
+    <table>
+    <tr>
+        <th>Username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Active Status</th>
+        <th>Remove From Group</th>
+    </tr>
+    {% for item in userResults %}
+        <tr>
+            <td>{{ item.username }}</td>
+            <td>{{ item.first_name }}</td>
+            <td>{{ item.last_name }}</td>
+            <td>{{ item.is_active }}</td>
+            <td><form method='post' action='#'>{% csrf_token %}<input type="submit" value="Remove From Group" name= {{ item.username }} /></form></td>
+        </tr>
+
+    {% endfor %}
+    </table>
+
+    <button><a href="/welcome">Back to Home Screen</a></button>
+</body>
+</html>

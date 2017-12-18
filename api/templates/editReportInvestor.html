@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/login-style.css'%}" />
+<script src="{% static 'assets/js/login-util.js' %}"></script>
+<form id = "msform" action = "" method = "POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button><a href="/welcome">Back to Home Screen</a></button>
+    {% if selected_report %}
+    <h2> Add files to {{ selected_report.report_name }} </h2>
+    
+    Files: <br>
+    <input type="file" name="files" multiple>
+    <br>
+{% endif %}
+<input type="submit" value = "Submit" />
+</form>

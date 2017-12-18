@@ -1,0 +1,12 @@
+votes = {}
+votes.add('Susie', 0)
+votes.add('Sally', 0)
+votes.add('Jenny', 0)
+
+voting = input("Enter the name of the person you'd like to vote for")
+
+if voting in votes.keys():
+	votes[0][votes] +=1
+else: 
+	votes.add(voting, 1)
+

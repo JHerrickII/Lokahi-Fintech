@@ -1,0 +1,186 @@
+{%  load static %}
+
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+        <title> Welcome to Lokahi! </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{%  static  'assets/css/main.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+						<h1><a href="/" id="logo">Lokahi Fintech <em>by team 16</em></a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li class="current"><a href="/">Home</a></li>
+								<!--<li>
+									<a href="#">Actions</a>
+									<ul>
+										<li><a href="reportUpload">Create a Report</a></li>
+										<li><a href="/viewReports/">View All Reports</a></li>
+                                        <li><a href="createGroup">Create a Group</a></li>
+										<li><a href="#">Send a Message</a></li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li>-->
+								<li><a href="/mission-statement/">Mission Statement</a></li>
+								<li><a href="/contact-us/">Contact Us</a></li>
+                                {% if user.is_authenticated %}
+                                    <li> <a href = "current"> Log Out </a></li>
+                                {% else %}
+                                    <li><a href="/login/">Log In</a></li>
+                                {% endif %}
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Banner -->
+				<section id="banner">
+					<header>
+						<h2>Lokahi: <em>Want to start creating reports? <a href="/mission-statement/">Info</a></em></h2>
+						<a href="/signup/" class="button">Sign Up</a>
+					</header>
+				</section>
+
+			<!-- Highlights -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row 200%">
+							<section class="4u 12u(narrower)">
+								<div class="box highlight">
+									<i class="icon major fa-paper-plane"></i>
+									<h3>Messaging</h3>
+									<p>Any user can leave a private message for a specific user.</p>
+								</div>
+							</section>
+							<section class="4u 12u(narrower)">
+								<div class="box highlight">
+									<i class="icon major fa-pencil"></i>
+									<h3>Reports</h3>
+									<p>Companies seeking capital can create a report containing information about their business plan and current project(s).</p>
+								</div>
+							</section>
+							<section class="4u 12u(narrower)">
+								<div class="box highlight">
+									<i class="icon major fa-wrench"></i>
+									<h3>Security</h3>
+									<p>Top of the line security and encryption keeps all of your information safe.</p>
+								</div>
+							</section>
+						</div>
+					</div>
+				</section>
+
+			<!-- Gigantic Heading -->
+				<section class="wrapper style2">
+					<div class="container">
+						<header class="major">
+							<h2>Bringing together small investors and small firms needing venture capital.</h2>
+							<p>A vision that will never change.</p>
+						</header>
+					</div>
+				</section>
+
+			<!-- Posts -->
+			
+					<div class="wrapper style1">
+						<header>
+							<h2><center>Meet the Team.</center></h2>
+						</header>
+					</div>
+			
+				<section class="wrapper style1">
+					<div class="container">
+						<div class="row">
+							<section class="6u 12u(narrower)">
+								<div class="box post">
+									<a href="#" class="image left"><img src="{% static 'images/john.jpg'%}" alt="" /></a>
+									<div class="inner">
+										<h3>John Herrick</h3>
+										<p>"When %99 of people doubt your idea, you're either gravely wrong or about to make history." -Scott Belsky</p>
+									</div>
+								</div>
+							</section>
+							<section class="6u 12u(narrower)">
+								<div class="box post">
+									<a href="#" class="image left"><img src="{% static 'images/emma.jpg'%}" alt="" /></a>
+									<div class="inner">
+										<h3>Emma Kopf</h3>
+										<p>"Mask off, I said fuck it mask off." -Future</p>
+									</div>
+								</div>
+							</section>
+						</div>
+						<div class="row">
+							<section class="6u 12u(narrower)">
+								<div class="box post">
+									<a href="#" class="image left"><img src="{% static 'images/hussain.jpg'%}" alt="" /></a>
+									<div class="inner">
+										<h3>Hussain Humandi</h3>
+										<p>"I said 'SIKE' dats the wrong numbaaa!" -Supa Hot Fire</p>
+									</div>
+								</div>
+							</section>
+							<section class="6u 12u(narrower)">
+								<div class="box post">
+									<a href="#" class="image left"><img src="{% static 'images/monique2.jpg' %}" alt="" /></a>
+									<div class="inner">
+										<h3>Monique Mezher</h3>
+										<p>"I been down so long it look like up to me! They look up to me." -Drake</p>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</section>
+
+			<!-- CTA -->
+				<section id="cta" class="wrapper style3">
+					<div class="container">
+						<header>
+							<h2>Follow information about the Lokahi project here: </h2>
+							<a href="/mission-statement/" class="button">Project Details</a>
+						</header>
+					</div>
+				</section>
+
+
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{% static 'assets/js/main.js' %}"></script>
+			
+	</body>
+</html>

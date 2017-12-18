@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{%  load static %}
+<link rel="stylesheet" href="{%  static  'assets/css/main.css' %}" />
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'assets/js/skel.min.js' %}"></script>
+<script src="{% static 'assets/js/util.js' %}"></script>
+{% load static %}
+<html lang="en">
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    <head>
+    <meta charset="UTF-8">
+    <title>Search Reports</title>
+</head>
+<body>
+<center>
+Search Existing Reports!
+    <form method="POST">
+
+<table>
+    <tr> <td>Company Name: </td>
+    <td><input type="text" name="searchCompanyName"></td>
+    </tr>
+    <tr> <td>CEO: </td>
+    <td><input type="text" name="searchCEOName"></td>
+    </tr>
+    <tr> <td>Sector: </td>
+    <td><input type="text" name="searchSector"></td>
+    </tr>
+    <tr> <td>Industry: </td>
+    <td><input type="text" name="searchIndustry"></td>
+    </tr>
+    <tr> <td>Company Location: </td>
+    <td><input type="text" name="searchCompanyLoc"></td>
+    </tr>
+    <tr> <td>Company Country: </td>
+    <td><input type="text" name="searchCompanyCountry"></td>
+    </tr>
+    <tr> <td>Current Project: </td>
+    <td><textarea class="input" name=searchCompanyProjects rows="10" cols="20"></textarea></td>
+    </tr>
+     <tr> <td>Date of Report: </td>
+    <td><input type="date" name="searchReportDate"></td>
+    </tr>
+    <tr> <td>Company Sector: </td>
+    <td><input type="text" name="searchCompanySector"></td>
+    </tr>
+    <tr> <td>Company Industry: </td>
+    <td><input type="text" name="searchCompanyIndustry"></td>
+    </tr>
+</table>
+<button type="submit">Search</button>
+        </form>
+    <button><a href="/welcome">Back to Home Screen</a></button>
+</center>
+</body>
+</form>
+</html>

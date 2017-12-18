@@ -1,0 +1,26 @@
+{%  load static %}
+<!DOCTYPE html>
+<!--<link rel="stylesheet" href="{% static 'assets/css/login-style.css'%}" />
+<script src="{% static 'assets/js/login-util.js' %}"></script>-->
+<link rel="stylesheet" href="{%  static  'assets/css/main.css' %}" />
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+{% block content %}
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+
+  </form>
+    <p>Don't have an account? <button><a href="/signup">Sign Up</a></button></p>
+{% endblock %}
+<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{% static 'assets/js/main.js' %}"></script>

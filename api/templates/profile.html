@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+
+
+</head>
+<body>
+{%  load static %}
+<link rel="stylesheet" href="{%  static  'assets/css/main.css' %}" />
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'assets/js/skel.min.js' %}"></script>
+<script src="{% static 'assets/js/util.js' %}"></script>
+{% csrf_token %}
+    <h1>Profile</h1>
+    <p>Hello, {{ user.username }}  <a href="{% url 'logout' %}">[Logout]</a></p>
+    <center><h2>You are a member of these groups:</h2></center>
+    <table>
+    <tr>
+        <th>Group Name</th>
+
+
+    </tr>
+    {% for item in groupResults %}
+
+        <tr>
+            <center><td>{{ item.name }}</td></center>
+
+        </tr>
+
+    {% endfor %}
+    </table>
+
+
+        <!-- add a for loop, row and data cell for reports-->
+    </table>
+    <center><h2> Here is your public key. If you are representing a company, put this key in a text file to use for encryption in the FDA: </h2>
+        <table><tr> {{ pub_key }}</tr></table></center>
+   <center><button><a href="/welcome">Back to Home Screen</a></button></center>
+</body>
+</html>

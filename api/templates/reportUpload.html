@@ -1,0 +1,68 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<form method="post" enctype="multipart/form-data">-->
+<!--{% csrf_token %}-->
+    <!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Report Upload</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<center>-->
+<!--Upload your report here!-->
+<!--<table>-->
+    <!--<tr> <td>Report Name: </td>-->
+    <!--<td><input type="text" name="report_file_name"></td>-->
+    <!--</tr>-->
+    <!--<tr><td> Report File: </td>-->
+    <!--<td> <input type = "file" name = "report_files" multiple></td>-->
+    <!--</tr>-->
+    <!--<tr><td>Company Name: </td>-->
+    <!--<td> <input type="text" name = "company_name"></td>-->
+    <!--</tr>-->
+    <!--<tr><td>Company Phone Number:</td>-->
+    <!--<td> <input type="text" name="company_phone"></td></tr>-->
+    <!--<tr><td>Company Location: </td>-->
+    <!--<td><input type="text" name = "company_location"></td>-->
+    <!--</tr>-->
+    <!--<tr> <td> Company Country: </td>-->
+    <!--<td> <input type="text" name = "company_country"></td>-->
+    <!--</tr>-->
+    <!--<td> Business Type: </td>-->
+    <!--<td><input type="text" name="business_type"></td>-->
+    <!--<tr><td> Current Projects: </td>-->
+    <!--<td> <input type="text" name="current_projects"></td>-->
+    <!--</tr>-->
+    <!--<tr> <td> Report type </td>-->
+	 <!--<td><select name="private">-->
+	 <!--<option value=True>private</option>-->
+	 <!--<option value=False>public</option>-->
+	 <!--</select>-->
+	 <!--</td>-->
+    <!--</tr>-->
+    <!--<td> Keywords: </td>-->
+    <!--<td> <input type=" text" name="tags"> </td>-->
+<!--</table>-->
+<!--<button type="submit">Upload</button>-->
+    <!--<center>-->
+<!--</body>-->
+<!--</form>-->
+<!--</html>-->
+
+{%  load static %}
+<link rel="stylesheet" href="{%  static  'assets/css/main.css' %}" />
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'assets/js/skel.min.js' %}"></script>
+<script src="{% static 'assets/js/util.js' %}"></script>
+{% load static %}
+<center>
+<form id = "msform" action = "" method = "POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form.as_p}}
+    <input type="submit" value = "Submit" />
+    <button><a href="/welcome">Back to Home Screen</a></button>
+
+</form>
+</center>

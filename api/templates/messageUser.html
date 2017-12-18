@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{%  load static %}
+<link rel="stylesheet" href="{%  static  'assets/css/main.css' %}" />
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'assets/js/skel.min.js' %}"></script>
+<script src="{% static 'assets/js/util.js' %}"></script>
+{% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/login-style.css'%}" />
+<script src="{% static 'assets/js/login-util.js' %}"></script>
+<form id = "msform" action = "" method = "post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value = "Submit" />
+    <button><a href="/welcome">Back to Home Screen</a></button>
+
+</form>

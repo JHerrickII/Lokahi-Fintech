@@ -1,0 +1,153 @@
+{%  load static %}
+
+<!DOCTYPE HTML>
+<!--
+	Arcana by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+	<head>
+		<title>Mission Statement</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+						<h1><a href="/" id="logo">Lokahi Fintech <em>by team 16</em></a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="/">Home</a></li>
+								<!--<li>
+									<a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam sed tempus</a></li>
+										<li>
+											<a href="#">Submenu</a>
+											<ul>
+												<li><a href="#">Lorem dolor</a></li>
+												<li><a href="#">Phasellus magna</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam nisl</a></li>
+												<li><a href="#">Veroeros feugiat</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li>-->
+								<li><a href="/mission-statement/">Mission Statement</a></li>
+								<li><a href="/contact-us/">Contact Us</a></li>
+								<li><a href="/login/">Log In</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Main -->
+				<section class="wrapper style1">
+					<div class="container">
+						<div id="content">
+
+							<!-- Content -->
+
+								<article>
+									<header>
+										<h2>Our Mission Statement</h2>
+										<p>"A System to Support Secure Crowdfunding Information Sharing between General Venture Capitalists and Companies Seeking Investment"</p>
+									</header>
+
+									<span class="image featured"><img src="{% static 'images/business-banner.png' %}" alt="" /></span>
+
+									<p></p>
+
+<h3 align=center> The goal of this system is to provide a means for potential investors to share their expertise
+    so that each can determine the viability of the investment.</h3>
+									<p align = center>
+                                    One variation of Financial Technology (Fintech) uses crowdfunding combined with crowd intelligence
+                                    as a means to provide transparency (information disclosure) into a company’s viability, replacing
+                                    traditional Securities and Exchange Commission (SEC) prospectus. This allows companies and
+                                    investors to avoid the extremely high cost of both investing and capital acquisition associated with
+                                    traditional investment banking. Investment banks normally identify asymmetric information
+                                     and moral
+                                    hazards
+                                    . <br><br>
+                                    Lokahi Fintech Crowdfunding (LFC) brings together small investors and small firms needing venture
+                                    capital which would otherwise be excluded from this financial market. Companies seeking venture
+                                    capital need a means to disseminate information about their company and its potential growth and
+                                    profit in a safe and secure environment. Potential investors need a means to collect, share, and
+                                    distribute information about the potential investments in a similar environment. The goal is to develop a
+                                    secure system in which companies and investors can work together to share feedback and avoid
+                                    asymmetric information and moral hazards. <br><br>
+                                    Lokahi Fintech Crowdfunding (version 1) will allow a company (“company user”) seeking capital to create a
+                                    report containing information about their business plan and current project(s). This report will be made up
+                                    of some standard information fields and one or more files. The information and files will be uploaded using
+                                    a web application where they will be stored securely on a server.<br><br>
+                                    A company user can indicate that a report is private. This means that permission to view all information
+                                    stored in a private report can be granted by the company user to particular users or to a group of users,
+                                    and the report will not be visible to others. <br><br>
+                                    An “investor user” can add files to a report that can contain information relevant to the subject company
+                                    including data on the general business cycle, sector, industry along with particulars regarding the
+                                    company’s executives. <br><br>
+                                    Independently of its public/private status, files attached to a report can optionally be marked as encrypted
+                                    when they are uploaded to the server. The file must be encrypted before it is uploaded to the web
+                                    application. <br><br>
+                                    A user can leave a private message for a specific user. A user will have the ability to see a list of
+                                    messages left for him or her, and be able to delete a message. Private messages will be encrypted, and
+                                    the recipient can choose to decrypt it and then read it.<br> <br>
+                                    A stand-alone program (i.e. one that runs on a user's local machine) must be created to download and
+                                    decrypt files in a report that are encrypted. This stand-alone program must communicate with the webapplication
+                                    to: list reports that are visible to that user; allow the user to choose a report, and then download
+                                    a file in that report and decrypt it. The stand-alone program should also be able to encrypt a file that a user
+                                    chooses for later uploading of encrypted files.<br> <br>
+                                    Any person can create an account that allows them to become a user by registering with the system.
+                                    There will be at least one user with the role of site-manager. Site-managers can give other users sitemanager
+                                    privilege. They can suspend and un-suspend a user’s account. They can see all reports (even
+                                    the private ones). They can update and delete reports
+                                    </p>
+
+									
+								</article>
+
+						</div>
+					</div>
+				</section>
+
+
+
+
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

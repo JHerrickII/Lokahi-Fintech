@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    <head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+<center>
+<h1>Create A New Profile</h1>
+<table>
+    <tr> <td>First Name: </td>
+    <td><input type="text" name="fname" placeholder="First Name" /></td>
+    </tr>
+    <tr> <td>Last Name: </td>
+    <td><input type="text" name="lname" placeholder="Last Name" /></td>
+    </tr>
+    <tr> <td>Company Name: </td>
+    <td><input type="text" name="company" placeholder="Company Name" /></td>
+    </tr>
+    <tr> <td>Username: </td>
+    <td><input type="text" name="username" placeholder="Username" /></td>
+    </tr>
+    <tr> <td>Email: </td>
+    <td><input type="text" name="email" placeholder="Email" /></td>
+    </tr>
+    <tr> <td>Password: </td>
+    <td><input type="password" name="pass" placeholder="Password" /></td>
+    </tr>
+    <tr> <td>Confirm Password: </td>
+    <td><input type="password" name="cpass" placeholder="Confirm Password" /></td>
+    </tr>
+</table>
+<button type="submit">Create Account</button>
+    <center>
+</body>
+</form>
+</html>

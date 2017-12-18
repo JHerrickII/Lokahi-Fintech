@@ -1,0 +1,36 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'assets/css/login-style.css'%}" />
+<script src="{% static 'assets/js/login-util.js' %}"></script>
+<form id = "msform" action = "" method = "POST" enctype="multipart/form-data">{% csrf_token %}
+
+    {% if selected_report %}
+    <h2> Edit {{ selected_report.report_name }} </h2>
+    Report Name: <br>
+    <input type="text" name="report_name" value={{ selected_report.report_name }}><br>
+    Company Name: <br>
+    <input type="text" name="company_name" value={{ selected_report.company_name }}><br>
+    Company Phone: <br>
+    <input type="text" name="company_phone" value={{ selected_report.company_phone }}><br>
+    Company Location: <br>
+    <input type="text" name="company_location" value={{ selected_report.company_location}}><br>
+    Company Country: <br>
+    <input type="text" name="company_country" value={{ selected_report.company_country }}><br>
+    Business Type: <br>
+    <input type="text" name="business_type" value={{ selected_report.business_type }}><br>
+    Current Projects: <br>
+    <textarea class="input" name="current_projects" rows="5" cols="20"
+    value={{ selected_report.current_projects }}>{{ selected_report.current_projects }}</textarea><br>
+{#    <input type="textarea" name="current_projects" cols="50" rows="5" value={{ selected_report.current_projects}}><br>#}
+    Company Industry: <br>
+    <input type="text" name="company_industry" value={{ selected_report.company_industry }}><br>
+    Company Sector: <br>
+    <input type="text" name="company_sector" value={{ selected_report.company_sector }}><br>
+    CEO Name: <br>
+    <input type="text" name="ceo_name" value={{ selected_report.ceo_name }}><br>
+    Company Email:
+    <input type="text" name="company_email" value={{ selected_report.company_email }} <br>
+    {% endif %}
+
+    <input type="submit" value = "Submit" />
+<button><a href="/welcome">Back to Home Screen</a></button>
+</form>

@@ -1,0 +1,76 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<center>
+  <head>
+    <title>Lokahi Fintech</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">-->
+    <link rel="stylesheet" href="{%  static  'assets/css/main.css' %}" />
+  </head>
+
+  <body>
+    <h2>Lokahi Fintech</h2>
+
+    
+    {% if user.is_authenticated %}
+
+        {% if user_type == "1" %}
+            <h3>Welcome Investor User, {{ user.username }}  <a href="{% url 'logout' %}">[Logout]</a></h3>
+            <a href="/profile">My Profile</a><br>
+            <a href="/searchReports">Search Reports</a><br>
+            <a href="/viewReportsInvestor">View and Download Reports</a><br>
+            <a href="/viewReportsInvestor">Add Files to Existing Reports</a><br>
+            <a href="/createGroup">Create a new Group</a><br>
+            <a href="/addUsersToMemberGroup">Add Members To A Group</a><br>
+            <a href="/removeSelfFromGroup">Remove Self From A Group</a><br>
+            <a href="/inbox">Inbox ( {{ i }} )</a><br>
+            <a href="/secretInbox">Secret Inbox</a><br>
+            <a href="/sent">Sent Mail</a><br>
+            <a href="/messageUser">Send a Message</a><br>
+
+        {% endif %}
+
+        {% if user_type == "2" %}
+            <h3>Welcome Company User, {{ user.username }}  <a href="{% url 'logout' %}">[Logout]</a></h3>
+            <hr width="75%">
+            <table>
+            <tr><a href="/profile">My Profile</a><br></tr>
+            <tr><a href="/reportUpload">Create Report</a><br></tr>
+            <tr><a href="/viewReports">View and Download Reports</a><br></tr>
+            <tr><a href="/createGroup">Create a new Group</a><br></tr>
+            <tr><a href="/addUsersToMemberGroup">Add Members To A Group</a><br></tr>
+            <tr><a href="/removeSelfFromGroup">Remove Self From A Group</a><br></tr>
+            <tr><a href="/inbox">Inbox ( {{ i }} )</a><br></tr>
+            <tr><a href="/secretInbox">Secret Inbox</a><br></tr>
+            <tr><a href="/sent">Sent Mail</a><br></tr>
+            <tr><a href="/messageUser">Send a Message</a><br></tr>
+            </table>
+        {% endif %}
+
+        {% if  user_type == "0" %}
+            <h3>Welcome Site Manager, {{ user.username }}  <a href="{% url 'logout' %}">[Logout]</a></h3>
+            <a href="/profile">My Profile</a><br>
+            <a href="/grantSMStatus">Grant Site Manager Status</a><br>
+            <a href="/createGroup">Create Groups</a><br>
+            <a href="/addUsersToGroup">Assign Group Members</a><br>
+            <a href="/removeUserFromGroup">Remove Group Members</a><br>
+            <a href="/suspendRestoreAccess">Suspend/Restore User Access</a><br>
+            <a href="/viewReportsSM">Access Reports</a>
+        {% endif %}  
+    {% endif %}
+       
+    <!-- Scripts -->
+            <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+            <script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+            <script src="{% static 'assets/js/skel.min.js' %}"></script>
+            <script src="{% static 'assets/js/util.js' %}"></script>
+            <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+            <script src="{% static 'assets/js/main.js' %}"></script>
+   
+    
+    <ul>
+    </ul>
+  </body>
+    </center>
+</html>

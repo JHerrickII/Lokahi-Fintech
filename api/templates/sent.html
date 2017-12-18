@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sent Mail</title>
+</head>
+<body>
+{%  load static %}
+<link rel="stylesheet" href="{%  static  'assets/css/main.css' %}" />
+<!-- Scripts -->
+<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'assets/js/skel.min.js' %}"></script>
+<script src="{% static 'assets/js/util.js' %}"></script>
+    <h1>Sent Mail</h1>
+    <p>Hello, {{ user.username }}  <a href="{% url 'logout' %}">[Logout]</a></p>
+    <table>
+    <tr>
+        <th>Date Sent</th>
+        <th>Message To</th>
+        <th>Message From</th>
+        <th>Message Subject</th>
+        <th>Message Body</th>
+        <th>Delete</th>
+    </tr>
+    {% for item in messageResults %}
+        {% if item.message_from == user.username %}
+            <tr>
+                <td>{{ item.time_created }}</td>
+                <td>{{ item.message_to }}</td>
+                <td>{{ item.message_from }}</td>
+                <td>{{ item.message_subject }}</td>
+                <td>{{ item.message_body }}</td>
+                <td>{{ item.message_delete }}</td>
+                <td><form method='post' action='#'>{% csrf_token %}<input type="submit" value="Delete" name= {{ item.message_id }} /></form></td>
+
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </table>
+
+    <button><a href="/messageUser">Send a Message</a></button>
+    <button><a href="/welcome">Back to Home Screen</a></button>
+
+</body>
+</html>
